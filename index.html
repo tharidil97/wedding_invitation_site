@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranmini & Tharinda - Wedding Invitation</title>
+    <meta name="description" content="Wedding Invitation for Ranmini Nisansala and Tharinda Dilshan. Join us to celebrate our special day on December 11, 2026 at Amora Lagoon Hotel Seeduwa.">
+    
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ====================================================
+         THE INTERACTIVE GATE SCREEN (PORTAL ENTRANCE)
+         ==================================================== -->
+    <div class="gate-overlay" id="gate-overlay">
+        <!-- Left Wing Gate -->
+        <div class="gate-door gate-left">
+            <div class="gate-filigree outer"></div>
+            <div class="gate-filigree inner"></div>
+            <div class="gate-corner top-left"></div>
+            <div class="gate-corner bottom-left"></div>
+        </div>
+
+        <!-- Right Wing Gate -->
+        <div class="gate-door gate-right">
+            <div class="gate-filigree outer"></div>
+            <div class="gate-filigree inner"></div>
+            <div class="gate-corner top-right"></div>
+            <div class="gate-corner bottom-right"></div>
+        </div>
+
+        <!-- Floating Wax Seal Crest in Center -->
+        <div class="gate-seal-container">
+            <div class="gate-seal-card">
+                <span class="gate-title">We Are Getting Married</span>
+                <h2 class="gate-names">Ranmini &amp; Tharinda</h2>
+                <span class="gate-date">11 . 12 . 2026</span>
+                <span class="click-prompt">Tap Seal to Open</span>
+                
+                <!-- Red Wax Seal Button -->
+                <div class="wax-seal-btn" id="wax-seal-btn" title="Open Invitation">
+                    <span class="seal-initials">T&amp;R</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================
+         BACKGROUND MUSIC PLAYER CONTROL
+         ==================================================== -->
+    <div class="music-toggle" id="music-toggle" title="Toggle Background Music">
+        <i class="fa-solid fa-volume-xmark"></i>
+    </div>
+
+    <!-- ====================================================
+         CSS ROSE PETALS FLOATING CONTAINER
+         ==================================================== -->
+    <div id="petals-container"></div>
+
+    <!-- ====================================================
+         STICKY GLASSMOPHIC NAVIGATION BAR
+         ==================================================== -->
+    <nav class="navbar" id="navbar">
+        <a href="#home" class="nav-logo">R &amp; T</a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#couple">The Couple</a></li>
+            <li><a href="#countdown-sec">Countdown</a></li>
+            <li><a href="#events">Timeline</a></li>
+            <li><a href="#location">Venue Map</a></li>
+            <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+        <div class="nav-toggle-btn" id="nav-toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- ====================================================
+         HERO COVER SECTION WITH PARALLAX BACKGROUND
+         ==================================================== -->
+    <header class="hero-section" id="home">
+        <div class="hero-content">
+            <span class="hero-subtitle">The Marriage Invitation</span>
+            <h1 class="hero-title">Ranmini &amp; Tharinda</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-date">December 11, 2026 &bull; Seeduwa, Sri Lanka</p>
+            <a href="#story" class="btn-luxury">Explore Invitation</a>
+        </div>
+    </header>
+
+    <!-- ====================================================
+         POETRY / STORY INTRO SECTION
+         ==================================================== -->
+    <section class="poetry-section reveal-on-scroll" id="story">
+        <div class="poetry-container">
+            <div class="poetry-decor">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <p class="poetry-text">
+                "Two lives, two hearts, joined together in friendship, united forever in love. 
+                Let our love be like a beautiful melody, playing softly through the seasons of our life, 
+                blessing us with joy and painting our days with gold."
+            </p>
+            <span class="poetry-author">— The Melody of Love</span>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         COUPLE SECTION (BRIDE & GROOM ROLES)
+         ==================================================== -->
+    <section class="couple-section reveal-on-scroll" id="couple">
+        <div class="container">
+            <div class="section-heading-wrapper">
+                <span class="heading-crest">Meet the</span>
+                <h2>Bride &amp; Groom</h2>
+            </div>
+            
+            <div class="couple-grid">
+                <!-- The Bride -->
+                <div class="couple-card">
+                    <div class="couple-img-container">
+                        <img src="images/pic2.jpeg" alt="Bride Ranmini Nisansala" class="couple-photo">
+                    </div>
+                    <div class="couple-info">
+                        <h3>Ranmini Nisansala</h3>
+                        <span class="couple-role">The Bride</span>
+                        <span class="parents-tag">Loving Daughter of</span>
+                        <p class="parents-names">Mr. &amp; Mrs. Peiris</p>
+                        <p class="couple-bio">
+                            "A beautiful soul, with a heart of gold, ready to walk into a gorgeous tomorrow, writing a love story that will live forever in our hearts."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Heart Ampersand Separator -->
+                <div class="couple-middle-and">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <!-- The Groom -->
+                <div class="couple-card">
+                    <div class="couple-img-container">
+                        <img src="images/pic1.jpeg" alt="Groom Tharinda Dilshan" class="couple-photo">
+                    </div>
+                    <div class="couple-info">
+                        <h3>Tharinda Dilshan</h3>
+                        <span class="couple-role">The Groom</span>
+                        <span class="parents-tag">Loving Son of</span>
+                        <p class="parents-names">Mr. &amp; Mrs. Amarakoon</p>
+                        <p class="couple-bio">
+                            "With strength in his vows, warmth in his eyes, and a promise that stands the test of time, ready to protect and cherish our shared tomorrow."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         COUNTDOWN TIMER TIMER SECTION
+         ==================================================== -->
+    <section class="countdown-section reveal-on-scroll" id="countdown-sec">
+        <div class="container">
+            <h2 class="countdown-heading">We Are Counting Down</h2>
+            <p class="countdown-sub">Until We Say "I Do"</p>
+            
+            <div class="countdown-timer-container">
+                <!-- Days Box -->
+                <div class="timer-box">
+                    <span class="timer-val" id="days">00</span>
+                    <span class="timer-label">Days</span>
+                </div>
+                <!-- Hours Box -->
+                <div class="timer-box">
+                    <span class="timer-val" id="hours">00</span>
+                    <span class="timer-label">Hours</span>
+                </div>
+                <!-- Minutes Box -->
+                <div class="timer-box">
+                    <span class="timer-val" id="minutes">00</span>
+                    <span class="timer-label">Mins</span>
+                </div>
+                <!-- Seconds Box -->
+                <div class="timer-box">
+                    <span class="timer-val" id="seconds">00</span>
+                    <span class="timer-label">Secs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         ITINERARY EVENTS TIMELINE
+         ==================================================== -->
+    <section class="timeline-section reveal-on-scroll" id="events">
+        <div class="container">
+            <div class="section-heading-wrapper">
+                <span class="heading-crest">Join us on Our</span>
+                <h2>Wedding Schedule</h2>
+            </div>
+            
+            <div class="timeline-wrapper">
+                <!-- Church Ceremony -->
+                <div class="timeline-event left reveal-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-church"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <span class="event-time">3:00 PM</span>
+                        <h3>Holy Church Mass</h3>
+                        <span class="event-location">
+                            <i class="fa-solid fa-location-dot"></i> Seeduwa Church, Seeduwa
+                        </span>
+                        <p class="event-details">
+                            Join us in God's holy house as we exchange our sacred wedding vows and seal our covenant in holy matrimony in the presence of family and friends.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Poruwa Ceremony -->
+                <div class="timeline-event right reveal-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-ring"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <span class="event-time">5:30 PM</span>
+                        <h3>Traditional Poruwa Ceremony</h3>
+                        <span class="event-location">
+                            <i class="fa-solid fa-location-dot"></i> Hotel Garden, Amora Lagoon
+                        </span>
+                        <p class="event-details">
+                            Witness our beautiful Sri Lankan cultural roots with the beating of traditional drums, the chanting of historical blessings, and the exchange of rings on the Poruwa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Grand Reception -->
+                <div class="timeline-event left reveal-on-scroll">
+                    <div class="timeline-dot">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <span class="event-time">7:00 PM</span>
+                        <h3>Wedding Reception</h3>
+                        <span class="event-location">
+                            <i class="fa-solid fa-location-dot"></i> Main Banquet Hall, Amora Lagoon
+                        </span>
+                        <p class="event-details">
+                            The celebration begins! Raise a toast to our new beginning. Join us for an evening of grand dinner, heartfelt speeches, and dancing the night away.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         LOCATION / DIRECTIONS / GOOGLE MAPS
+         ==================================================== -->
+    <section class="location-section reveal-on-scroll" id="location">
+        <div class="container">
+            <div class="section-heading-wrapper">
+                <span class="heading-crest">Find the Way to Our</span>
+                <h2>Celebration Venues</h2>
+            </div>
+            
+            <div class="location-grid">
+                <!-- Location Cards -->
+                <div class="location-info-card">
+                    <div class="location-item">
+                        <div class="location-item-header">
+                            <div class="location-icon-box">
+                                <i class="fa-solid fa-church"></i>
+                            </div>
+                            <h3>Church Service</h3>
+                        </div>
+                        <p class="location-address">
+                            <strong>Seeduwa Church</strong><br>
+                            Church Road, Seeduwa, Sri Lanka
+                        </p>
+                    </div>
+
+                    <div class="location-item" style="border-top: 1px dashed rgba(212,175,55,0.2); padding-top: 30px; margin-top: 30px;">
+                        <div class="location-item-header">
+                            <div class="location-icon-box">
+                                <i class="fa-solid fa-hotel"></i>
+                            </div>
+                            <h3>Reception &amp; Poruwa</h3>
+                        </div>
+                        <p class="location-address">
+                            <strong>Amora Lagoon Hotel</strong><br>
+                            Liyanagemulla, Seeduwa (Katunayake), Sri Lanka
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Google Maps Frame -->
+                <div class="map-card">
+                    <!-- Google Maps Embed optimized for Amora Lagoon Hotel Seeduwa -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.852934062835!2d79.87321597576551!3d7.143004392862309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2ee8101487f5b%3A0xc6fb9faca4b5fc19!2sAmora%20Lagoon%20Hotel!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         RSVP RESERVATION BOOKING SYSTEM
+         ==================================================== -->
+    <section class="rsvp-section reveal-on-scroll" id="rsvp">
+        <div class="rsvp-container">
+            <div class="rsvp-card">
+                <h2>Joyfully Reservation</h2>
+                <p class="rsvp-intro">
+                    We look forward to celebrating with you! Please let us know your attendance status by filling out the form below. RSVP details will be forwarded instantly to our email.
+                </p>
+                
+                <!-- Integrated Web3Forms connected to tharindadilshan7@gmail.com -->
+                <form id="wedding-rsvp-form" class="rsvp-form">
+                    <!-- Guest Name -->
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label for="guest_name">Full Name</label>
+                        <input type="text" id="guest_name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <!-- Email & Phone Row -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guest_email">Email Address</label>
+                            <input type="email" id="guest_email" name="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guest_phone">Phone Number</label>
+                            <input type="tel" id="guest_phone" name="phone" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+
+                    <!-- Guest Count & Attendance Status Row -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guest_count">Number of Guests</label>
+                            <select id="guest_count" name="guests_count">
+                                <option value="1">1 Person</option>
+                                <option value="2">2 Persons</option>
+                                <option value="3">3 Persons</option>
+                                <option value="4">4 Persons</option>
+                                <option value="5">5+ Persons</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="attendance-label">Are you Attending?</label>
+                            <div class="attendance-options">
+                                <label class="radio-option">
+                                    <input type="radio" name="attendance" value="attending" checked>
+                                    <span class="radio-custom"></span> Attending
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="attendance" value="declined">
+                                    <span class="radio-custom"></span> Declining
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guest Special Message -->
+                    <div class="form-group" style="margin-bottom: 35px;">
+                        <label for="guest_message">Wishes or Dietary Notes</label>
+                        <textarea id="guest_message" name="message" placeholder="Add a lovely message for Ranmini & Tharinda..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-rsvp-submit">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         SUCCESS POP-UP MODAL
+         ==================================================== -->
+    <div class="rsvp-success-modal" id="rsvp-success-modal">
+        <div class="success-card">
+            <div class="success-icon">
+                <i class="fa-solid fa-heart-circle-check"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p>
+                Dearest <strong id="success-guest-name">Guest</strong>, your wedding reservation <span id="success-guest-count"></span> has been successfully received and forwarded directly to <strong>tharindadilshan7@gmail.com</strong>.<br><br>
+                We are absolutely thrilled and look forward to celebrating this beautiful day with you!
+            </p>
+            <button class="btn-close-success" id="btn-close-success">Wonderful</button>
+        </div>
+    </div>
+
+    <!-- ====================================================
+         DOWNLOADABLE CARD ACTIONS FOOTER
+         ==================================================== -->
+    <section class="actions-footer-section">
+        <div class="download-invitation-container container">
+            <p class="download-intro">
+                Keep the wedding schedule and direct maps coordinates on your device for offline reference during the day.
+            </p>
+            <button class="btn-outline-luxury" id="btn-download-invitation">
+                <i class="fa-solid fa-file-arrow-down"></i> Download Invitation Card
+            </button>
+        </div>
+    </section>
+
+    <!-- ====================================================
+         SITE FOOTER
+         ==================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-logo">Ranmini &amp; Tharinda</div>
+            <div class="footer-date">11 . 12 . 2026</div>
+            <p class="footer-poem">
+                "And now these three remain: faith, hope and love. But the greatest of these is love."<br>
+                — 1 Corinthians 13:13
+            </p>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Tharinda &amp; Ranmini Wedding. Designed with luxury aesthetics &amp; love. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Interaction Script -->
+    <script src="js/main.js"></script>
+</body>
+</html>
