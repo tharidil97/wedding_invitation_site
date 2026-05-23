@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tharinda & Ranmini - Wedding Invitation</title>
+    <link rel="stylesheet" href="css/gemini-code-1779461628287.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="music/wed.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="gate-container">
+        <div class="gate gate-left"></div>
+        <div class="gate gate-right"></div>
+        <div class="gate-content">
+            <h1>Tharinda & Ranmini</h1>
+            <p>11 . 12 . 2026</p>
+            <button id="enter-btn">Open Invitation</button>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+
+        <header class="hero">
+            <h2>We are getting married!</h2>
+            <h1 class="names">Tharinda Dilshan <br> & <br> Ranmini Nisansala</h1>
+            <p class="parents">
+                Together with their parents,<br>
+                Mr. & Mrs. Amarakoon  |  Mr. & Mrs. Pieris
+            </p>
+        </header>
+
+        <section class="quote-section">
+            <p class="quote">"Two souls but a single thought, two hearts that beat as one."</p>
+        </section>
+
+        <section class="profiles">
+            <div class="profile-card">
+                <img src="pics/pic1.jpeg" alt="Groom" class="profile-img">
+                <h3>The Groom</h3>
+                <p>Tharinda Dilshan</p>
+            </div>
+            <div class="profile-card">
+                <img src="pics/pic2.jpeg" alt="Bride" class="profile-img">
+                <h3>The Bride</h3>
+                <p>Ranmini Nisansala</p>
+            </div>
+        </section>
+
+        <section class="countdown-section">
+            <h3>The Big Day Begins In:</h3>
+            <div id="countdown">
+                <div class="time-box"><span id="days">00</span><p>Days</p></div>
+                <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
+                <div class="time-box"><span id="minutes">00</span><p>Minutes</p></div>
+                <div class="time-box"><span id="seconds">00</span><p>Seconds</p></div>
+            </div>
+        </section>
+
+        <section class="schedule">
+            <h3>Event Schedule</h3>
+            <div class="timeline">
+                <div class="event">
+                    <h4>Church Mass</h4>
+                    <p><strong>3:00 PM</strong></p>
+                    <p>Seeduwa Church</p>
+                </div>
+                <div class="event">
+                    <h4>Poruwa Ceremony</h4>
+                    <p><strong>5:30 PM</strong></p>
+                    <p>Hotel Garden, Amora Lagoon</p>
+                </div>
+                <div class="event">
+                    <h4>Wedding Reception</h4>
+                    <p><strong>7:00 PM Onwards</strong></p>
+                    <p>Amora Lagoon, Seeduwa</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="rsvp-section">
+            <h3>Will You Join Us?</h3>
+            <form action="https://formsubmit.co/tharindadilshan7@gmail.com" method="POST" class="rsvp-form">
+                <input type="text" name="Name" placeholder="Your Full Name" required>
+                <input type="email" name="Email" placeholder="Your Email Address" required>
+                <select name="Attendance" required>
+                    <option value="" disabled selected>Will you attend?</option>
+                    <option value="Joyfully Accept">Joyfully Accept</option>
+                    <option value="Regretfully Decline">Regretfully Decline</option>
+                </select>
+                <input type="number" name="Guests" placeholder="Number of Guests" min="1" max="5">
+                <textarea name="Message" placeholder="Leave a wish for the couple (Optional)" rows="4"></textarea>
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Wedding RSVP!">
+
+                <button type="submit" class="submit-btn">Send RSVP</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>We can't wait to celebrate with you!</p>
+        </footer>
+    </div>
+
+    <script src="js/gemini-code-1779461634458.js"></script>
+</body>
+</html>
