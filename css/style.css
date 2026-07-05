@@ -1,0 +1,1937 @@
+/* 
+  Tharinda & Ranmini Wedding Invitation Style Sheet
+  Theme: Luxurious Pink & Ivory with Gold Accents
+  Designed for Visual Excellence & High-End Mobile Responsiveness
+*/
+
+/* ====================================================
+   DESIGN TOKENS & CUSTOM CSS VARIABLES
+   ==================================================== */
+:root {
+    /* Colors */
+    --bg-ivory-light: #FDFBF7;
+    --bg-ivory-rich: #F5EBE0;
+    --bg-ivory-dark: #E6CCB2;
+    --pink-light: #FFE5EC;
+    --pink-medium: #F3D7D7;
+    --pink-rich: #E8C5C8;
+    --pink-dark: #C78287;
+    --pink-deep: #4A2E35;
+    
+    --text-dark: #2F1E21;
+    --text-muted: #6E5A5C;
+    --gold-accent: #D4AF37;
+    --gold-dark: #B8860B;
+    
+    /* Fonts */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-script: 'Alex Brush', cursive;
+    
+    /* Shadow & Filigree styles */
+    --shadow-premium: 0 15px 35px rgba(74, 46, 53, 0.1);
+    --shadow-soft: 0 5px 15px rgba(74, 46, 53, 0.05);
+    --shadow-strong: 0 20px 45px rgba(74, 46, 53, 0.15);
+    --border-gold-thin: 1px solid rgba(212, 175, 55, 0.3);
+    
+    /* Layout */
+    --transition-smooth: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-gate: all 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* ====================================================
+   GLOBAL BASE STYLING
+   ==================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-ivory-light);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Scroll reveal initial states */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.reveal-on-scroll.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Section Header Styles */
+.section-heading-wrapper {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.heading-crest {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: var(--pink-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.section-heading-wrapper h2 {
+    font-size: 2.5rem;
+    color: var(--pink-deep);
+    position: relative;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.section-heading-wrapper h2::after {
+    content: '❤';
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold-accent);
+}
+
+.section-heading-wrapper h2::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 45%;
+    width: 10%;
+    height: 1px;
+    background-color: var(--gold-accent);
+}
+
+/* Premium Buttons */
+.btn-luxury {
+    display: inline-block;
+    padding: 14px 35px;
+    background-color: var(--pink-deep);
+    color: var(--bg-ivory-light);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 1px solid var(--pink-deep);
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-luxury:hover {
+    background-color: var(--bg-ivory-light);
+    color: var(--pink-deep);
+    border-color: var(--pink-deep);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-premium);
+}
+
+.btn-outline-luxury {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: var(--pink-deep);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 2px solid var(--pink-dark);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin: 10px;
+}
+
+.btn-outline-luxury:hover {
+    background-color: var(--pink-dark);
+    color: var(--bg-ivory-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* ====================================================
+   1. PORTAL GATE OVERLAY STYLING (BRIDE & GROOM MEET)
+   ==================================================== */
+.gate-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-ivory-light);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.portal-background-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.08;
+    background-image: radial-gradient(var(--pink-dark) 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    z-index: 1;
+}
+
+.portal-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px; /* Space in center for wax seal */
+    width: 90%;
+    max-width: 850px;
+    height: 100%;
+}
+
+.portal-card {
+    background-color: var(--bg-ivory-light);
+    border: 2px solid var(--gold-accent);
+    padding: 35px 25px;
+    border-radius: 120px 120px 20px 20px; /* Luxurious arched window frame look */
+    text-align: center;
+    width: 220px;
+    box-shadow: var(--shadow-premium);
+    position: relative;
+    border-bottom: 5px solid var(--pink-dark);
+}
+
+.portal-left-card {
+    transform: translateX(-120vw);
+    animation: slideGroomIn 1.3s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+.portal-right-card {
+    transform: translateX(120vw);
+    animation: slideBrideIn 1.3s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+
+.portal-avatar-frame {
+    width: 150px;
+    height: 200px;
+    border-radius: 90px; /* Arched photo frame */
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border: 3px solid var(--pink-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.portal-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.portal-card-name {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--pink-deep);
+    margin-bottom: 2px;
+}
+
+.portal-card-role {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--pink-dark);
+    font-weight: 600;
+}
+
+/* Central Wax Seal Connector */
+.portal-seal-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: fadeInSeal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.4s forwards;
+}
+
+/* Wax Seal Button (Modified from old code for portal center position) */
+.wax-seal-btn {
+    width: 75px;
+    height: 75px;
+    background-color: #A32638; /* Rich burgundy-red wax color */
+    border-radius: 50%;
+    box-shadow: inset -5px -5px 10px rgba(0,0,0,0.4), 
+                inset 5px 5px 10px rgba(255,255,255,0.4),
+                0 10px 25px rgba(163, 38, 56, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #751b27;
+    transition: var(--transition-smooth);
+    animation: floatingSeal 3s ease-in-out infinite;
+}
+
+.wax-seal-btn:hover {
+    transform: scale(1.08);
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.4), 
+                inset 2px 2px 5px rgba(255,255,255,0.4),
+                0 12px 30px rgba(163, 38, 56, 0.7);
+}
+
+.seal-initials {
+    color: var(--bg-ivory-light);
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    border: 2px double rgba(255,255,255,0.4);
+    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.portal-prompt {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    color: var(--pink-deep);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(253, 251, 247, 0.8);
+    background-color: rgba(253, 251, 247, 0.7);
+    padding: 4px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    animation: heartbeat 2s infinite;
+    white-space: nowrap;
+}
+
+/* Animations for Portal entry */
+@keyframes slideGroomIn {
+    to { transform: translateX(0); }
+}
+
+@keyframes slideBrideIn {
+    to { transform: translateX(0); }
+}
+
+@keyframes fadeInSeal {
+    to { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes floatingSeal {
+    0% { transform: scale(1) translateY(0px); }
+    50% { transform: scale(1) translateY(-6px); }
+    100% { transform: scale(1) translateY(0px); }
+}
+
+/* Opened Portal/Gate Classes triggered on action */
+.gate-overlay.gate-opened {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.gate-overlay.gate-opened .portal-left-card {
+    transform: translateX(-150vw);
+    transition: transform 1.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.gate-overlay.gate-opened .portal-right-card {
+    transform: translateX(150vw);
+    transition: transform 1.2s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+.gate-overlay.gate-opened .portal-seal-wrapper {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+    transition: all 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+}
+
+/* ====================================================
+   2. FLOATING PETALS & MUSIC CONTROLLER
+   ==================================================== */
+#petals-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.petal {
+    position: absolute;
+    top: -50px;
+    background-color: var(--pink-medium);
+    transform-origin: left top;
+    animation: fallingPetal 10s linear infinite;
+    opacity: 0.8;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+.music-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-ivory-light);
+    border: 2px solid var(--gold-accent);
+    border-radius: 50%;
+    box-shadow: var(--shadow-premium);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    color: var(--pink-deep);
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background-color: var(--pink-light);
+}
+
+.music-toggle.playing {
+    animation: spinSlowly 10s linear infinite;
+    background-color: var(--pink-light);
+    border-color: var(--pink-dark);
+}
+
+/* ====================================================
+   3. GLASSMORPHIC NAVBAR
+   ==================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 251, 247, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    z-index: 998;
+    transition: var(--transition-smooth);
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.navbar.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--pink-deep);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--gold-accent);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--pink-dark);
+}
+
+.nav-toggle-btn {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--pink-deep);
+    cursor: pointer;
+}
+
+/* ====================================================
+   4. HERO COVER PARALLAX SECTION
+   ==================================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(74, 46, 53, 0.4), rgba(74, 46, 53, 0.2)), url('../images/pic5.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 251, 247, 0.25); /* Subtle ivory overlay to soften */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--bg-ivory-light);
+    text-shadow: 2px 2px 10px rgba(74, 46, 53, 0.6);
+    padding: 20px;
+}
+
+.hero-subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.hero-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    width: 250px;
+}
+
+.hero-divider .divider-dot {
+    width: 60px;
+    height: 1px;
+    background-color: var(--bg-ivory-light);
+}
+
+.hero-divider i {
+    font-size: 0.9rem;
+    margin: 0 15px;
+}
+
+.hero-date {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+/* ====================================================
+   5. WELCOME & STORY SECTION
+   ==================================================== */
+.welcome-section {
+    background-color: var(--bg-ivory-light);
+    padding: 100px 0 60px 0;
+}
+
+.welcome-card {
+    background-color: var(--bg-ivory-light);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 8px;
+    padding: 80px 50px;
+    text-align: center;
+    box-shadow: var(--shadow-premium);
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-filigree {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-filigree.top {
+    top: 30px;
+    border-top: 1px solid var(--gold-accent);
+}
+
+.card-filigree.bottom {
+    bottom: 30px;
+    border-bottom: 1px solid var(--gold-accent);
+}
+
+.card-decor {
+    font-size: 2.2rem;
+    color: var(--pink-dark);
+    margin-bottom: 25px;
+}
+
+.guest-greeting-box {
+    margin-bottom: 20px;
+}
+
+.greeting-prefix {
+    font-family: var(--font-script);
+    font-size: 2rem;
+    color: var(--pink-dark);
+}
+
+.guest-name {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    color: var(--pink-deep);
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.welcome-subtext {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.welcome-message {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto 35px auto;
+    line-height: 1.9;
+}
+
+.card-signature .signature-text {
+    font-family: var(--font-script);
+    font-size: 2.8rem;
+    color: var(--pink-deep);
+}
+
+/* ====================================================
+   6. THE COUPLE SECTION
+   ==================================================== */
+.couple-section {
+    background-color: #FAF5EF; /* Rich Ivory backdrop */
+}
+
+.couple-grid {
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.couple-card {
+    background-color: var(--bg-ivory-light);
+    border: var(--border-gold-thin);
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.couple-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
+}
+
+.couple-img-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 25px auto;
+    overflow: hidden;
+    border: 3px solid var(--pink-light);
+    box-shadow: var(--shadow-soft);
+}
+
+.couple-photo {
+    width: 100%;
+    height: 100%;
+    object-cover: cover;
+    object-position: center;
+    transition: var(--transition-smooth);
+}
+
+.couple-card:hover .couple-photo {
+    transform: scale(1.08);
+}
+
+.couple-info h3 {
+    font-size: 1.8rem;
+    color: var(--pink-deep);
+    margin-bottom: 5px;
+}
+
+.couple-role {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--pink-dark);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.parents-tag {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.parents-names {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.couple-bio {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.7;
+}
+
+/* Center Ampersand Icon */
+.couple-middle-and {
+    text-align: center;
+    position: relative;
+}
+
+.couple-middle-and .ampersand {
+    font-family: var(--font-script);
+    font-size: 4rem;
+    color: var(--pink-dark);
+    line-height: 1;
+}
+
+.couple-middle-and i {
+    font-size: 1.4rem;
+    color: var(--gold-accent);
+    display: block;
+    margin-top: -10px;
+    animation: pulse 2.5s infinite;
+}
+
+/* ====================================================
+   7. COUNTDOWN SECTION
+   ==================================================== */
+.countdown-section {
+    position: relative;
+    background-image: linear-gradient(rgba(74, 46, 53, 0.4), rgba(74, 46, 53, 0.4)), url('../images/pic6.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 100px 0;
+    color: var(--bg-ivory-light);
+}
+
+.countdown-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(74, 46, 53, 0.2);
+}
+
+.countdown-section .container {
+    position: relative;
+    z-index: 2;
+    padding: 0;
+}
+
+.countdown-heading {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.countdown-sub {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: var(--pink-light);
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.countdown-timer-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.timer-box {
+    background: rgba(253, 251, 247, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    width: 110px;
+    height: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: var(--transition-smooth);
+}
+
+.timer-box:hover {
+    transform: translateY(-5px);
+    background: rgba(253, 251, 247, 0.25);
+}
+
+.timer-val {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: bold;
+    display: block;
+    line-height: 1.1;
+}
+
+.timer-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 8px;
+    color: var(--pink-light);
+}
+
+/* ====================================================
+   8. ITINERARY SCHEDULE TIMELINE
+   ==================================================== */
+.timeline-section {
+    background-color: var(--bg-ivory-light);
+}
+
+.timeline-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto 0 auto;
+}
+
+/* The vertical connecting line */
+.timeline-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--pink-medium);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+}
+
+.timeline-event {
+    position: relative;
+    width: 50%;
+    padding: 0 40px;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.timeline-event.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-event.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* The timeline dots */
+.timeline-dot {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--bg-ivory-light);
+    border: 2px solid var(--gold-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink-deep);
+    font-size: 1.1rem;
+    top: 15px;
+    z-index: 3;
+    box-shadow: var(--shadow-soft);
+}
+
+.timeline-event.left .timeline-dot {
+    right: -22px;
+}
+
+.timeline-event.right .timeline-dot {
+    left: -22px;
+}
+
+/* Timeline Cards styling */
+.timeline-card {
+    background-color: var(--bg-ivory-light);
+    border: var(--border-gold-thin);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
+}
+
+.event-image-header {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.event-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.timeline-card:hover .event-banner {
+    transform: scale(1.06);
+}
+
+.event-body {
+    padding: 30px;
+}
+
+.event-time {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--gold-dark);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.timeline-card h3 {
+    font-size: 1.5rem;
+    color: var(--pink-deep);
+    margin-bottom: 10px;
+}
+
+.event-location {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.event-location i {
+    color: var(--pink-dark);
+    margin-right: 5px;
+}
+
+.event-details {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn-event-map {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pink-deep);
+    border-bottom: 1px solid var(--pink-deep);
+    padding-bottom: 2px;
+}
+
+.btn-event-map:hover {
+    color: var(--pink-dark);
+    border-color: var(--pink-dark);
+    transform: translateX(3px);
+}
+
+/* ====================================================
+   9. LUXURY GALLERY SECTION & LIGHTBOX
+   ==================================================== */
+.gallery-section {
+    background-color: #FAF5EF;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-auto-rows: 240px;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    border: var(--border-gold-thin);
+}
+
+.gallery-item.item-wide {
+    grid-column: span 2;
+}
+
+.gallery-item.item-tall {
+    grid-row: span 2;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.gallery-overlay-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 46, 53, 0.4);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-ivory-light);
+    font-size: 1.8rem;
+    transition: var(--transition-smooth);
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover .gallery-overlay-hover {
+    opacity: 1;
+}
+
+/* Custom Lightbox Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 15, 17, 0.95);
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 4px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    animation: zoomOutEffect 0.4s ease-out;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: var(--bg-ivory-light);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.lightbox-close:hover {
+    color: var(--pink-light);
+    transform: scale(1.1);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--bg-ivory-light);
+    font-size: 2.2rem;
+    padding: 20px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.lightbox-nav:hover {
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--pink-light);
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    color: var(--bg-ivory-light);
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+/* ====================================================
+   10. MAPS & LOCATION DETAILS
+   ==================================================== */
+.location-section {
+    background-color: var(--bg-ivory-light);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.location-info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.location-item {
+    background-color: var(--bg-ivory-light);
+    border: var(--border-gold-thin);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+}
+
+.location-item-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.location-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--pink-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink-deep);
+    font-size: 1.1rem;
+}
+
+.location-item-header h3 {
+    font-size: 1.3rem;
+    color: var(--pink-deep);
+}
+
+.location-address {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.location-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-location-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border: 1px solid var(--pink-dark);
+    border-radius: 4px;
+    color: var(--pink-deep);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn-location-link:hover {
+    background-color: var(--pink-dark);
+    color: var(--bg-ivory-light);
+}
+
+.btn-copy-address {
+    background: transparent;
+    border: 1px dashed var(--gold-accent);
+    padding: 8px 18px;
+    border-radius: 4px;
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-copy-address:hover {
+    background-color: var(--bg-ivory-rich);
+    border-style: solid;
+}
+
+/* Map card frame */
+.map-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: var(--border-gold-thin);
+    box-shadow: var(--shadow-premium);
+    height: 450px;
+}
+
+.map-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ====================================================
+   11. RSVP FORM & RESERVATION SYSTEM
+   ==================================================== */
+.rsvp-section {
+    position: relative;
+    background-color: #FAF5EF;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.rsvp-decor-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background-image: radial-gradient(rgba(228, 197, 200, 0.15) 2px, transparent 2px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.rsvp-container {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.rsvp-card {
+    background-color: var(--bg-ivory-light);
+    border: 2px solid var(--gold-accent);
+    border-radius: 8px;
+    padding: 60px 45px;
+    box-shadow: var(--shadow-strong);
+    position: relative;
+}
+
+.rsvp-card h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--pink-deep);
+    margin-bottom: 10px;
+}
+
+.rsvp-intro {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.rsvp-form label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--pink-deep);
+}
+
+.rsvp-form input[type="text"],
+.rsvp-form input[type="email"],
+.rsvp-form input[type="tel"],
+.rsvp-form select,
+.rsvp-form textarea {
+    padding: 12px 18px;
+    border: 1px solid rgba(74, 46, 53, 0.15);
+    background-color: var(--bg-ivory-light);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus,
+.rsvp-form textarea:focus {
+    border-color: var(--pink-dark);
+    box-shadow: 0 0 0 3px rgba(199, 130, 135, 0.2);
+}
+
+.rsvp-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Custom Radios for attendance */
+.attendance-options {
+    display: flex;
+    gap: 20px;
+    padding-top: 8px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.85rem !important;
+    text-transform: none !important;
+    letter-spacing: 0px !important;
+    font-weight: 500 !important;
+    color: var(--text-dark) !important;
+    position: relative;
+    user-select: none;
+}
+
+.radio-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--pink-dark);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.radio-option input:checked ~ .radio-custom {
+    background-color: var(--pink-dark);
+}
+
+.radio-custom::after {
+    content: '';
+    position: absolute;
+    display: none;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--bg-ivory-light);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-option input:checked ~ .radio-custom::after {
+    display: block;
+}
+
+.btn-rsvp-submit {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: var(--pink-deep);
+    color: var(--bg-ivory-light);
+    border: none;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-rsvp-submit:hover {
+    background-color: var(--gold-accent);
+    color: var(--pink-deep);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-premium);
+}
+
+.btn-rsvp-submit:disabled {
+    background-color: var(--pink-medium);
+    cursor: not-allowed;
+}
+
+.rsvp-filigree.top {
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    width: 80px;
+}
+
+.rsvp-filigree.bottom {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    width: 80px;
+}
+
+/* ====================================================
+   12. SUCCESS RSVP POPUP MODAL
+   ==================================================== */
+.rsvp-success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 46, 53, 0.6);
+    z-index: 10001;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.rsvp-success-modal.active {
+    display: flex;
+}
+
+.success-card {
+    background-color: var(--bg-ivory-light);
+    border: 2px solid var(--gold-accent);
+    border-radius: 8px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: var(--shadow-strong);
+    animation: zoomOutEffect 0.4s ease-out;
+}
+
+.success-icon {
+    font-size: 3.5rem;
+    color: var(--pink-dark);
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.success-card h3 {
+    font-size: 1.8rem;
+    color: var(--pink-deep);
+    margin-bottom: 15px;
+}
+
+.success-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.btn-close-success {
+    padding: 12px 35px;
+    background-color: var(--pink-deep);
+    color: var(--bg-ivory-light);
+    border: none;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-close-success:hover {
+    background-color: var(--pink-dark);
+    transform: scale(1.03);
+}
+
+/* ====================================================
+   13. ACTION PANEL FOOTER
+   ==================================================== */
+.actions-footer-section {
+    background-color: var(--bg-ivory-light);
+    border-top: 1px solid rgba(212, 175, 55, 0.15);
+    text-align: center;
+}
+
+.download-invitation-container {
+    padding: 40px 20px;
+}
+
+.download-intro {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ====================================================
+   14. SYSTEM FOOTER
+   ==================================================== */
+.site-footer {
+    background-color: var(--pink-deep);
+    color: var(--bg-ivory-light);
+    text-align: center;
+    padding: 80px 0 40px 0;
+}
+
+.footer-logo {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer-date {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--gold-accent);
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.footer-poem {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--pink-light);
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    line-height: 1.8;
+}
+
+.footer-copyright {
+    font-size: 0.75rem;
+    color: rgba(253, 251, 247, 0.6);
+    border-top: 1px solid rgba(253, 251, 247, 0.1);
+    padding-top: 30px;
+}
+
+/* ====================================================
+   15. DYNAMIC KEYFRAME ANIMATIONS
+   ==================================================== */
+@keyframes floatingGently {
+    0% { transform: translate(-50%, -50%) translateY(0px); }
+    50% { transform: translate(-50%, -50%) translateY(-10px); }
+    100% { transform: translate(-50%, -50%) translateY(0px); }
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    40% { transform: scale(1); }
+    60% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spinSlowly {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes zoomOutEffect {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fallingPetal {
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        top: 110%;
+        transform: translateX(100px) rotate(360deg);
+    }
+}
+
+/* ====================================================
+   16. MEDIA VIEWPORTS RESPONSIVENESS (MOBILE-FIRST)
+   ==================================================== */
+
+/* Smaller Screens (Up to Tablet Width) */
+@media (max-width: 991px) {
+    .couple-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .couple-middle-and {
+        margin: 15px 0;
+    }
+    
+    .couple-middle-and .ampersand {
+        font-size: 3rem;
+    }
+    
+    .timeline-wrapper::after {
+        left: 30px;
+    }
+    
+    .timeline-event {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+        text-align: left !important;
+    }
+    
+    .timeline-event.left, .timeline-event.right {
+        left: 0;
+    }
+    
+    .timeline-dot {
+        left: 8px !important;
+        right: auto !important;
+    }
+    
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .map-card {
+        height: 350px;
+    }
+}
+
+/* Mobile Screens (Small Phones) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+    .nav-toggle-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-ivory-light);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        display: none;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-date {
+        font-size: 1.1rem;
+    }
+    
+    .welcome-card {
+        padding: 50px 25px;
+    }
+    
+    .guest-name {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-message {
+        font-size: 1rem;
+    }
+    
+    .countdown-timer-container {
+        gap: 15px;
+    }
+    
+    .timer-box {
+        width: 80px;
+        height: 85px;
+    }
+    
+    .timer-val {
+        font-size: 1.8rem;
+    }
+    
+    .timer-label {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .rsvp-card {
+        padding: 40px 20px;
+    }
+}
+
+/* ====================================================
+   17. OFFLINE PRINT STYLESHEET (MEDIA PRINT)
+   ==================================================== */
+.print-only-card {
+    display: none;
+}
+
+@media print {
+    /* Hide everything on screen */
+    body * {
+        visibility: hidden;
+    }
+    
+    /* Display and format the print invitation card */
+    .print-only-card, .print-only-card * {
+        visibility: visible;
+    }
+    
+    .print-only-card {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        padding: 40px;
+        color: #000;
+        font-family: Georgia, serif;
+    }
+    
+    .print-card-border {
+        border: 2px solid #000;
+        padding: 30px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    
+    .print-crest {
+        font-size: 1.8rem;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .print-only-card h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    .print-line {
+        border: 0;
+        border-top: 1px solid #000;
+        margin: 20px 0;
+    }
+    
+    .print-names {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 15px 0;
+    }
+    
+    .print-date {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+    
+    .print-details {
+        text-align: left;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .print-item {
+        margin-bottom: 15px;
+    }
+    
+    .print-item h4 {
+        margin-bottom: 3px;
+        font-size: 1.1rem;
+    }
+    
+    .print-item p {
+        font-size: 0.95rem;
+        color: #333;
+    }
+    
+    .print-footer {
+        font-style: italic;
+        margin-top: 25px;
+    }
+}
