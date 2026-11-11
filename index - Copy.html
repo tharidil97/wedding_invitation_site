@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Our Wedding | Tharinda &amp; Ranmini 💍 11 Dec 2026</title>
+
+  <!-- Open Graph / WhatsApp Preview Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Our Wedding — Tharinda &amp; Ranmini 💍">
+  <meta property="og:description" content="Together Forever • Friday, 11th December 2026 at Amora Lagoon Hotel, Katunayake. Please join us to celebrate our wedding!">
+  <meta property="og:image" content="assets/images/hero-bg.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#7d5ba6">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Falling Lavender Petals Canvas -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- Background Music Audio Element -->
+  <audio id="wedding-audio" autoplay loop preload="auto" playsinline>
+    <source src="assets/audio/wedding-melody.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- ===================================================
+       1. GLASS TRANSLUCENT NAVIGATION HEADER
+       =================================================== -->
+  <header id="main-nav-header" class="glass-nav-header">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand-title">Our Wedding</a>
+
+      <ul class="nav-menu-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#when-where">When &amp; Where</a></li>
+        <li><a href="#countdown">Countdown</a></li>
+        <li><a href="#couple">The Two of Us</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Floating Vinyl Music Player -->
+        <button id="music-toggle-btn" class="music-toggle-btn" aria-label="Toggle background music" title="Toggle Music">
+          <i class="fa-solid fa-compact-disc fa-lg"></i>
+        </button>
+
+        <!-- RSVP Header CTA Button -->
+        <a href="#rsvp" class="nav-rsvp-btn">RSVP</a>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open mobile navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-drawer">
+    <ul>
+      <li><a href="#hero" class="mobile-link">Home</a></li>
+      <li><a href="#when-where" class="mobile-link">When &amp; Where</a></li>
+      <li><a href="#countdown" class="mobile-link">Countdown</a></li>
+      <li><a href="#couple" class="mobile-link">The Two of Us</a></li>
+      <li><a href="#story" class="mobile-link">Our Story</a></li>
+      <li><a href="#rsvp" class="mobile-link">RSVP</a></li>
+    </ul>
+  </div>
+
+  <!-- ===================================================
+       2. FULLSCREEN CINEMATIC HERO SECTION (PINVITE STYLE)
+       =================================================== -->
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="hero-tagline">Together Forever</p>
+
+        <h1 class="hero-couple-title">
+          Tharinda <span class="amp">&amp;</span> Ranmini
+        </h1>
+
+        <!-- Modern Date Block: Month [Day] Year -->
+        <div class="hero-date-block">
+          <span class="hero-date-month">DECEMBER</span>
+          <span class="hero-date-day">11</span>
+          <span class="hero-date-year">2026</span>
+        </div>
+
+        <p class="hero-venue-sub">
+          Amora Lagoon Hotel • Katunayake, Sri Lanka
+        </p>
+      </div>
+
+      <!-- Bouncing Scroll Down Indicator -->
+      <a href="#when-where" class="hero-scroll-indicator" aria-label="Scroll down to details">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+
+      <!-- Smooth Curved SVG Wave Bottom Separator -->
+      <svg class="hero-bottom-curve" viewBox="0 0 2560 168" preserveAspectRatio="none">
+        <path d="M0,168 L2560,168 L2560,0 C2100,140 1600,168 1280,168 C960,168 460,140 0,0 Z"></path>
+      </svg>
+    </section>
+
+    <!-- ===================================================
+         3. "WHEN AND WHERE" SECTION (PINVITE ARCHITECTURE)
+         =================================================== -->
+    <section id="when-where" class="section-wrapper">
+      <div class="when-where-top-split">
+        <div class="when-where-text-col">
+          <span class="section-eyebrow">JOIN OUR JOY!</span>
+          <h2 class="section-main-title">Celebrating Love in a Magical Setting</h2>
+          <p class="section-intro-text">
+            With joyful hearts, we humbly invite you to join us as we begin the most cherished chapter of our lives. Let us come together to celebrate our union in a setting as timeless as our love.
+          </p>
+          <div style="margin-top: 20px;">
+            <a href="#rsvp" class="nav-rsvp-btn" style="display: inline-block;">
+              Confirm Your Attendance
+            </a>
+          </div>
+        </div>
+
+        <div class="when-where-image-col">
+          <!-- Arched Photo Frame (Amora Lagoon Hotel preview) -->
+          <div class="arched-photo-frame">
+            <img src="assets/images/us.jpg" alt="Amora Lagoon Hotel" class="arched-photo-img">
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Event Highlight Cards with Real Photo Backgrounds -->
+      <div class="events-cards-grid">
+        <!-- Event 1: Church Mass -->
+        <div class="event-photo-card" style="background-image: url('assets/images/church.jpg');">
+          <div class="event-card-glass-overlay">
+            <div class="event-card-top-meta">
+              <span class="event-time-pill"><i class="fa-regular fa-clock"></i> 3:30 PM</span>
+              <span class="event-badge-pill">Holy Matrimony</span>
+            </div>
+            <div class="event-card-body-content">
+              <h3 class="event-photo-title">Church Ceremony</h3>
+              <p class="event-photo-venue">
+                <strong>Immaculate Conception Virgin Mary's Church</strong><br>
+                Seeduwa, Sri Lanka
+              </p>
+              <a href="https://www.google.com/maps/search/?api=1&query=Immaculate+Conception+Virgin+Mary's+Church+Seeduwa" target="_blank" class="btn-event-photo-map">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>See on Map</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2: Poruwa Ceremony -->
+        <div class="event-photo-card" style="background-image: url('assets/images/poruwa.jpg');">
+          <div class="event-card-glass-overlay">
+            <div class="event-card-top-meta">
+              <span class="event-time-pill"><i class="fa-regular fa-clock"></i> 5:24 PM</span>
+              <span class="event-badge-pill">Cultural Blessings</span>
+            </div>
+            <div class="event-card-body-content">
+              <h3 class="event-photo-title">Poruwa Ceremony</h3>
+              <p class="event-photo-venue">
+                <strong>Amora Lagoon Hotel</strong><br>
+                Hotel Garden, Katunayake
+              </p>
+              <a href="https://www.google.com/maps/search/?api=1&query=Amora+Lagoon+Hotel+Katunayake" target="_blank" class="btn-event-photo-map">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>See on Map</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3: Reception & Dinner -->
+        <div class="event-photo-card" style="background-image: url('assets/images/venue.jpg');">
+          <div class="event-card-glass-overlay">
+            <div class="event-card-top-meta">
+              <span class="event-time-pill"><i class="fa-regular fa-clock"></i> 7:00 PM Onwards</span>
+              <span class="event-badge-pill">Dining &amp; Dancing</span>
+            </div>
+            <div class="event-card-body-content">
+              <h3 class="event-photo-title">Grand Reception</h3>
+              <p class="event-photo-venue">
+                <strong>Hindana Ballroom</strong><br>
+                Amora Lagoon Hotel, Katunayake
+              </p>
+              <a href="https://www.google.com/maps/search/?api=1&query=Amora+Lagoon+Hotel+Katunayake" target="_blank" class="btn-event-photo-map">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>See on Map</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================
+           4. SHIFTING COUNTDOWN SECTION (PINVITE ARCHITECTURE)
+           =================================================== -->
+      <div id="countdown" class="countdown-container-box">
+        <span class="section-eyebrow">COUNTING DOWN THE DAYS</span>
+        <h3 style="font-family: 'Cinzel', serif; font-size: clamp(1.4rem, 3.5vw, 2rem); color: var(--text-dark); margin-bottom: 5px;">
+          Until We Say "I Do"
+        </h3>
+        <p style="font-family: 'Cardo', serif; font-style: italic; color: var(--text-muted); font-size: 1.1rem; margin-bottom: 15px;">
+          Friday, 11th December 2026
+        </p>
+
+        <!-- Horizontal Shifting Countdown Bar -->
+        <div class="shifting-countdown-grid">
+          <div class="countdown-segment">
+            <span id="cd-days" class="countdown-value">00</span>
+            <span class="countdown-name">Days</span>
+          </div>
+          <div class="countdown-segment">
+            <span id="cd-hours" class="countdown-value">00</span>
+            <span class="countdown-name">Hours</span>
+          </div>
+          <div class="countdown-segment">
+            <span id="cd-minutes" class="countdown-value">00</span>
+            <span class="countdown-name">Minutes</span>
+          </div>
+          <div class="countdown-segment">
+            <span id="cd-seconds" class="countdown-value">00</span>
+            <span class="countdown-name">Seconds</span>
+          </div>
+        </div>
+
+        <div class="calendar-action-row">
+          <a id="btn-google-calendar" href="#" class="btn-calendar-add">
+            <i class="fa-solid fa-calendar-plus" style="color: var(--template-primary);"></i>
+            <span>Add to Google Calendar</span>
+          </a>
+          <button id="btn-download-ical" class="btn-calendar-add">
+            <i class="fa-brands fa-apple" style="color: var(--template-primary);"></i>
+            <span>Apple / Outlook Calendar (.ics)</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         5. "THE TWO OF US" (BRIDE & GROOM PROFILES)
+         =================================================== -->
+    <section id="couple" class="section-wrapper" style="padding-top: 20px;">
+      <div class="section-header-center">
+        <span class="section-eyebrow">THE TWO OF US</span>
+        <h2 class="section-main-title">Two Hearts, One Journey</h2>
+        <p class="section-intro-text">
+          Guided by love, faith, and the blessings of our beloved families.
+        </p>
+      </div>
+
+      <div class="couple-cards-grid">
+        <!-- The Bride Profile -->
+        <div class="couple-profile-card">
+          <span class="couple-role-tag">THE BRIDE</span>
+          <div class="couple-avatar-wrap">
+            <img src="assets/images/bride.jpg" alt="Ranmini Nisansala" class="couple-avatar-img">
+          </div>
+          <h3 class="couple-person-name">Ranmini Nisansala</h3>
+          <div class="couple-parents-sub">Daughter of Mr. &amp; Mrs. Peiris</div>
+          <p class="couple-bio-quote">
+            "With Tharinda, life feels like a melody of peace, joy, and pure devotion. I am overjoyed to celebrate our union surrounded by those we love."
+          </p>
+          <div class="couple-contact-pills">
+            <a href="tel:0778659742" class="btn-contact-pill btn-pill-phone">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call Ranmini</span>
+            </a>
+            <a href="https://wa.me/94778659742" target="_blank" class="btn-contact-pill btn-pill-wa">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- The Groom Profile -->
+        <div class="couple-profile-card">
+          <span class="couple-role-tag">THE GROOM</span>
+          <div class="couple-avatar-wrap">
+            <img src="assets/images/groom.jpg" alt="Tharinda Dilshan" class="couple-avatar-img">
+          </div>
+          <h3 class="couple-person-name">Tharinda Dilshan</h3>
+          <div class="couple-parents-sub">Son of Mr. &amp; Mrs. Amarakoon</div>
+          <p class="couple-bio-quote">
+            "Meeting Ranmini made every dream turn into purpose. I cannot wait to hold her hand as we embark on this sacred journey of a lifetime."
+          </p>
+          <div class="couple-contact-pills">
+            <a href="tel:0766509844" class="btn-contact-pill btn-pill-phone">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call Tharinda</span>
+            </a>
+            <a href="https://wa.me/94766509844" target="_blank" class="btn-contact-pill btn-pill-wa">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         6. "OUR STORY" & PRE-SHOOT MOMENTS GALLERY
+         =================================================== -->
+    <section id="story" class="section-wrapper">
+      <div class="story-narrative-card">
+        <span class="section-eyebrow">OUR STORY</span>
+        <h2 class="section-main-title" style="margin-bottom: 20px;">
+          How We Met &amp; Decided to Journey Together
+        </h2>
+        <p class="story-narrative-text">
+          "From quiet conversations to laughter that brightened every day, our connection grew into something timeless. After shared dreams, growth, and unforgettable memories, we made the sacred promise of forever. We are counting down the days to say 'I do' on 11th December 2026, surrounded by the people who mean the world to us."
+        </p>
+        <p class="story-sinhala-blessing">
+          "ජීවිතයේ සොඳුරුතම සිහිනය සැබෑ කරමින්, දෙහදක් එක්වන මේ මංගල මොහොතේ, අපගේ නව දිවියේ ඇරඹුමට ආශිර්වාද කරන්නට ආදරයෙන් ඔබට ඇරයුම් කරමු."
+        </p>
+      </div>
+
+      <!-- 6-Photo Moments Gallery (Animated Continuous Reel) -->
+      <div class="gallery-marquee-wrapper">
+        <!-- Directional controls for 'ehata mehata' sliding -->
+        <button id="gallery-ctrl-prev" class="gallery-marquee-ctrl prev" aria-label="Slide Left" title="Scroll Left">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="gallery-ctrl-next" class="gallery-marquee-ctrl next" aria-label="Slide Right" title="Scroll Right">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="gallery-marquee-viewport" id="gallery-viewport">
+          <div class="gallery-marquee-track" id="gallery-track">
+            <!-- Set 1 (Cards 1 to 6) -->
+            <div class="gallery-card-item" data-index="0" data-caption="Sunset Stroll by the Ocean">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-1.jpg" alt="Pre-shoot photo 1" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Sunset Horizon</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="1" data-caption="Under the Floral Archway">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-2.jpg" alt="Pre-shoot photo 2" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Under the Floral Arch</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="2" data-caption="Sweet Laughter & Golden Hours">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-3.jpg" alt="Pre-shoot photo 3" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Cherished Laughs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="3" data-caption="Walking Towards Forever">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-4.jpg" alt="Pre-shoot photo 4" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Hand in Hand</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="4" data-caption="The Promise of a Lifetime">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-5.jpg" alt="Pre-shoot photo 5" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Forever &amp; Always</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="5" data-caption="Underneath the Starlit Sky">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-6.jpg" alt="Pre-shoot photo 6" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Lagoon Romance</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Set 2 (Seamless Infinite Marquee Duplicate 1 to 6) -->
+            <div class="gallery-card-item" data-index="0" data-caption="Sunset Stroll by the Ocean">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-1.jpg" alt="Pre-shoot photo 1" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Sunset Horizon</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="1" data-caption="Under the Floral Archway">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-2.jpg" alt="Pre-shoot photo 2" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Under the Floral Arch</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="2" data-caption="Sweet Laughter & Golden Hours">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-3.jpg" alt="Pre-shoot photo 3" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Cherished Laughs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="3" data-caption="Walking Towards Forever">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-4.jpg" alt="Pre-shoot photo 4" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Hand in Hand</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="4" data-caption="The Promise of a Lifetime">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-5.jpg" alt="Pre-shoot photo 5" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Forever &amp; Always</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-card-item" data-index="5" data-caption="Underneath the Starlit Sky">
+              <div class="gallery-card-inner">
+                <img src="assets/images/gallery-6.jpg" alt="Pre-shoot photo 6" class="gallery-card-img" loading="lazy">
+                <div class="gallery-card-overlay">
+                  <span class="gallery-overlay-badge"><i class="fa-solid fa-heart"></i> Lagoon Romance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-marquee-hint">
+          <i class="fa-solid fa-hand-pointer"></i> <span>Click any photo to expand • Hover or touch to pause animation</span>
+        </div>
+      </div>
+
+      <!-- Lightbox Modal for Gallery -->
+      <div id="gallery-lightbox" class="lightbox-modal">
+        <button id="lightbox-close" class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        <button id="lightbox-prev" class="lightbox-nav-btn lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <button id="lightbox-next" class="lightbox-nav-btn lightbox-next" aria-label="Next image">&#10095;</button>
+        <div class="lightbox-content">
+          <img id="lightbox-img" src="" alt="Full view" class="lightbox-img">
+          <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         7. RSVP SECTION (CONNECTED TO FORMSUBMIT)
+         =================================================== -->
+    <section id="rsvp" class="section-wrapper" style="padding-top: 10px;">
+      <div class="section-header-center">
+        <span class="section-eyebrow">BE OUR GUEST</span>
+        <h2 class="section-main-title">We Look Forward to Your Confirmation</h2>
+        <p class="section-intro-text">
+          Every detail matters to us, and your presence is the most precious gift. Please confirm your attendance before 20th November 2026.
+        </p>
+      </div>
+
+      <div class="rsvp-card-modern">
+        <form id="wedding-rsvp-form">
+          <!-- Full Name -->
+          <div class="form-field-group">
+            <label for="guest-name" class="form-field-label">Your Full Name <span class="req">*</span></label>
+            <input type="text" id="guest-name" name="guest_name" class="form-input-modern" placeholder="e.g., Nuwan Perera" required>
+          </div>
+
+          <!-- Email & Phone Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <div class="form-field-group">
+              <label for="guest-email" class="form-field-label">Gmail / Email Address <span class="req">*</span></label>
+              <input type="email" id="guest-email" name="guest_email" class="form-input-modern" placeholder="e.g., nuwan@gmail.com" required>
+            </div>
+            <div class="form-field-group">
+              <label for="guest-phone" class="form-field-label">WhatsApp / Phone Number <span class="req">*</span></label>
+              <input type="tel" id="guest-phone" name="guest_phone" class="form-input-modern" placeholder="e.g., 077 123 4567" required>
+            </div>
+          </div>
+
+          <!-- Attendance Choice -->
+          <div class="form-field-group">
+            <label class="form-field-label">Will You Attend? <span class="req">*</span></label>
+            <div class="radio-cards-row">
+              <label class="rsvp-choice-card">
+                <input type="radio" name="attending" value="Attending with Joy" required>
+                <div>
+                  <span class="choice-title">Joyfully Accepts</span>
+                  <span class="choice-desc">I will be delighted to celebrate with you!</span>
+                </div>
+              </label>
+              <label class="rsvp-choice-card">
+                <input type="radio" name="attending" value="Regretfully Declines">
+                <div>
+                  <span class="choice-title">Regretfully Declines</span>
+                  <span class="choice-desc">Sending warmest blessings from afar</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Number of Guests -->
+          <div class="form-field-group">
+            <label for="guest-count" class="form-field-label">Total Guests Attending (Including Yourself)</label>
+            <select id="guest-count" name="guest_count" class="form-select-modern">
+              <option value="1 Guest">1 Guest</option>
+              <option value="2 Guests" selected>2 Guests</option>
+              <option value="3 Guests">3 Guests</option>
+              <option value="4 Guests">4 Guests</option>
+              <option value="5+ Guests">5+ Guests (Family)</option>
+            </select>
+          </div>
+
+          <!-- Which Events Will You Attend? -->
+          <div class="form-field-group">
+            <label class="form-field-label">Events You Will Attend (Select all that apply)</label>
+            <div class="events-check-grid">
+              <label class="event-check-label">
+                <input type="checkbox" name="events" value="Church Mass (3:00 PM)" checked>
+                <span>Church Mass (3:00 PM)</span>
+              </label>
+              <label class="event-check-label">
+                <input type="checkbox" name="events" value="Poruwa Ceremony (5:30 PM)" checked>
+                <span>Poruwa Ceremony (5:30 PM)</span>
+              </label>
+              <label class="event-check-label">
+                <input type="checkbox" name="events" value="Reception & Dinner (7:00 PM)" checked>
+                <span>Reception &amp; Dinner (7:00 PM)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Wishes / Message -->
+          <div class="form-field-group">
+            <label for="guest-message" class="form-field-label">Wishes or Special Note for the Couple</label>
+            <textarea id="guest-message" name="guest_message" rows="3" class="form-textarea-modern" placeholder="Leave your heartfelt wishes, blessing, or dietary preferences..."></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="rsvp-submit-btn" class="btn-submit-rsvp-modern">
+            <i id="rsvp-submit-spinner" class="fa-solid fa-spinner fa-spin" style="display: none;"></i>
+            <span id="rsvp-submit-text">Send RSVP Confirmation 💌</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- RSVP Success Feedback Modal -->
+    <div id="rsvp-success-modal" class="rsvp-modal-backdrop">
+      <div class="rsvp-feedback-box">
+        <div class="rsvp-feedback-icon">
+          <i class="fa-solid fa-heart fa-2x anim-heartbeat"></i>
+        </div>
+        <h3 class="rsvp-feedback-title">Thank You!</h3>
+        <p id="rsvp-summary-guest" class="rsvp-feedback-msg">
+          Your RSVP confirmation has been directly sent to Tharinda &amp; Ranmini. We look forward to celebrating together!
+        </p>
+        <button id="close-rsvp-modal-btn" class="nav-rsvp-btn" style="margin: 0 auto; display: block; border: none; cursor: pointer;">
+          Close &amp; Continue
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===================================================
+       8. CONTACT & FOOTER SECTION
+       =================================================== -->
+  <footer id="contact" class="contact-section-modern">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span class="section-eyebrow">GET IN TOUCH</span>
+      <h2 class="section-main-title" style="margin-bottom: 8px;">We Are Here For You</h2>
+      <p style="font-family: 'Cardo', serif; font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px;">
+        Feel free to reach out to us directly for directions or any questions.
+      </p>
+
+      <!-- Hotlines Grid -->
+      <div class="hotline-cards-row">
+        <!-- Groom Hotline -->
+        <div class="hotline-card">
+          <span class="hotline-role">THE GROOM</span>
+          <h4 class="hotline-name">Tharinda Dilshan</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="tel:0766509844" class="btn-contact-pill btn-pill-phone" style="justify-content: center;">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call 0766509844</span>
+            </a>
+            <a href="https://wa.me/94766509844" target="_blank" class="btn-contact-pill btn-pill-wa" style="justify-content: center;">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp Tharinda</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Bride Hotline -->
+        <div class="hotline-card">
+          <span class="hotline-role">THE BRIDE</span>
+          <h4 class="hotline-name">Ranmini Nisansala</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="tel:0778659742" class="btn-contact-pill btn-pill-phone" style="justify-content: center;">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call 0778659742</span>
+            </a>
+            <a href="https://wa.me/94778659742" target="_blank" class="btn-contact-pill btn-pill-wa" style="justify-content: center;">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>WhatsApp Ranmini</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Parents Hotline Box -->
+      <div class="parents-hotline-box">
+        <strong>FAMILY RSVP HOTLINES</strong>
+        <a href="tel:0779468913" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-phone-volume"></i> 0779468913 (Malani)</a>
+        <span style="margin: 0 10px; opacity: 0.5;">||</span>
+        <a href="tel:0760006784" style="color: inherit; text-decoration: none;"><i class="fa-solid fa-phone-volume"></i> 0760006784 (Amarakoon)</a>
+      </div>
+
+      <p class="footer-quote-text">
+        "And now these three remain: faith, hope and love. But the greatest of these is love." — 1 Corinthians 13:13
+      </p>
+
+      <button class="footer-share-btn btn-copy-link">
+        <i class="fa-solid fa-share-nodes"></i>
+        <span>Copy Invitation Link to Share</span>
+      </button>
+
+      <div class="footer-bottom-copy">
+        Crafted with love for Tharinda &amp; Ranmini • Friday, 11th December 2026 • Katunayake, Sri Lanka
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/petals.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

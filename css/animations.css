@@ -1,0 +1,109 @@
+/* ===================================================
+   Tharinda & Ranmini Wedding - Animations
+   Theme: Elegant, Romantic & Subtle Micro-interactions
+   =================================================== */
+
+/* Wax seal breathe pulse */
+@keyframes sealPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 6px 16px rgba(110, 82, 135, 0.25));
+  }
+  50% {
+    transform: scale(1.04);
+    filter: drop-shadow(0 10px 24px rgba(212, 175, 55, 0.45));
+  }
+}
+
+/* Vinyl record continuous spin */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating elements */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+/* Shimmering gold button */
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Heartbeat pulse */
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.15);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.15);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+/* Fade In Up Reveal */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Envelope / Splash Unfold */
+@keyframes envelopeOpen {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.06);
+    visibility: hidden;
+  }
+}
+
+.anim-seal-pulse {
+  animation: sealPulse 3.5s ease-in-out infinite;
+}
+
+.anim-spin-music {
+  animation: spinSlow 5s linear infinite;
+}
+
+.anim-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.anim-heartbeat {
+  animation: heartBeat 2s infinite ease-in-out;
+}
