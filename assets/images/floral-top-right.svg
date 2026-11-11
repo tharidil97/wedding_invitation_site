@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="lav1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9d84b7" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6e5287" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="lav2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bba6d2" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#8466a2" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="leaf1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93a893" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#5f7560" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="leaf2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b2c4b2" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#7a917b" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Main curved stem 1 -->
+  <path d="M400,30 C320,60 260,130 240,240 C230,290 250,350 270,390" stroke="url(#leaf1)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <!-- Secondary stem 2 -->
+  <path d="M400,100 C340,140 310,210 320,320" stroke="url(#leaf2)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <!-- Branch 3 -->
+  <path d="M370,10 C290,50 210,90 170,160 C140,220 150,280 180,330" stroke="url(#leaf1)" stroke-width="2.8" stroke-linecap="round" fill="none" opacity="0.75"/>
+  <!-- Branch 4 into corner -->
+  <path d="M320,0 C240,30 150,50 90,110 C50,150 40,200 60,250" stroke="url(#leaf2)" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Eucalyptus round leaves -->
+  <ellipse cx="260" cy="110" rx="18" ry="12" transform="rotate(-35 260 110)" fill="url(#leaf2)"/>
+  <ellipse cx="295" cy="85" rx="16" ry="11" transform="rotate(-20 295 85)" fill="url(#leaf1)"/>
+  <ellipse cx="225" cy="155" rx="20" ry="14" transform="rotate(-45 225 155)" fill="url(#leaf2)"/>
+  <ellipse cx="195" cy="130" rx="17" ry="12" transform="rotate(-60 195 130)" fill="url(#leaf1)"/>
+  <ellipse cx="150" cy="190" rx="19" ry="13" transform="rotate(-50 150 190)" fill="url(#leaf2)"/>
+  <ellipse cx="170" cy="235" rx="16" ry="11" transform="rotate(-30 170 235)" fill="url(#leaf1)"/>
+  <ellipse cx="115" cy="140" rx="16" ry="11" transform="rotate(-65 115 140)" fill="url(#leaf2)"/>
+  <ellipse cx="80" cy="180" rx="15" ry="10" transform="rotate(-75 80 180)" fill="url(#leaf1)"/>
+
+  <!-- Lavender flower clusters (Stem 1) -->
+  <g filter="url(#softGlow)">
+    <ellipse cx="238" cy="225" rx="7" ry="4" transform="rotate(-25 238 225)" fill="url(#lav1)"/>
+    <ellipse cx="248" cy="222" rx="7" ry="4" transform="rotate(25 248 222)" fill="url(#lav2)"/>
+    <ellipse cx="243" cy="217" rx="6" ry="4" fill="url(#lav1)"/>
+    <ellipse cx="242" cy="250" rx="8" ry="5" transform="rotate(-30 242 250)" fill="url(#lav1)"/>
+    <ellipse cx="254" cy="247" rx="8" ry="5" transform="rotate(30 254 247)" fill="url(#lav2)"/>
+    <ellipse cx="247" cy="242" rx="7" ry="4" fill="url(#lav2)"/>
+    <ellipse cx="249" cy="275" rx="9" ry="5" transform="rotate(-20 249 275)" fill="url(#lav2)"/>
+    <ellipse cx="261" cy="272" rx="9" ry="5" transform="rotate(35 261 272)" fill="url(#lav1)"/>
+    <ellipse cx="255" cy="266" rx="8" ry="5" fill="url(#lav1)"/>
+    <ellipse cx="258" cy="305" rx="10" ry="6" transform="rotate(-25 258 305)" fill="url(#lav1)"/>
+    <ellipse cx="270" cy="301" rx="10" ry="6" transform="rotate(25 270 301)" fill="url(#lav2)"/>
+    <ellipse cx="270" cy="340" rx="9" ry="5" transform="rotate(-15 270 340)" fill="url(#lav2)"/>
+    <ellipse cx="278" cy="336" rx="8" ry="5" transform="rotate(30 278 336)" fill="url(#lav1)"/>
+    <circle cx="280" cy="370" r="5" fill="url(#lav1)"/>
+    <circle cx="283" cy="385" r="4" fill="url(#lav2)"/>
+  </g>
+
+  <!-- Lavender flower clusters (Branch 3) -->
+  <g filter="url(#softGlow)">
+    <ellipse cx="172" cy="155" rx="8" ry="5" transform="rotate(-40 172 155)" fill="url(#lav2)"/>
+    <ellipse cx="184" cy="150" rx="8" ry="5" transform="rotate(20 184 150)" fill="url(#lav1)"/>
+    <ellipse cx="160" cy="180" rx="8" ry="5" transform="rotate(-50 160 180)" fill="url(#lav1)"/>
+    <ellipse cx="172" cy="175" rx="8" ry="5" transform="rotate(15 172 175)" fill="url(#lav2)"/>
+    <ellipse cx="155" cy="210" rx="9" ry="5" transform="rotate(-35 155 210)" fill="url(#lav2)"/>
+    <ellipse cx="167" cy="205" rx="9" ry="5" transform="rotate(25 167 205)" fill="url(#lav1)"/>
+    <ellipse cx="163" cy="245" rx="8" ry="5" transform="rotate(-20 163 245)" fill="url(#lav1)"/>
+    <ellipse cx="175" cy="240" rx="8" ry="5" transform="rotate(30 175 240)" fill="url(#lav2)"/>
+  </g>
+
+  <!-- Subtle golden sparkles -->
+  <circle cx="220" cy="190" r="2.5" fill="#d4af37" opacity="0.7"/>
+  <circle cx="270" cy="150" r="2" fill="#d4af37" opacity="0.6"/>
+  <circle cx="180" cy="280" r="2.5" fill="#d4af37" opacity="0.8"/>
+  <circle cx="130" cy="120" r="2" fill="#d4af37" opacity="0.7"/>
+</svg>

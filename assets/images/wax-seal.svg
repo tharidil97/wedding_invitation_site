@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%" fill="none">
+  <defs>
+    <radialGradient id="sealGrad" cx="45%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#b099c7"/>
+      <stop offset="45%" stop-color="#7e6197"/>
+      <stop offset="85%" stop-color="#553b6e"/>
+      <stop offset="100%" stop-color="#3c2650"/>
+    </radialGradient>
+    <radialGradient id="goldGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fff2b3"/>
+      <stop offset="40%" stop-color="#e2bf65"/>
+      <stop offset="80%" stop-color="#ab822e"/>
+      <stop offset="100%" stop-color="#735213"/>
+    </radialGradient>
+    <filter id="sealShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#2d1c3a" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#sealShadow)">
+    <!-- Organic wax drip edge shape -->
+    <path d="M80,8 C100,6 118,14 133,26 C147,38 156,58 154,78 C153,98 144,118 128,133 C113,148 95,155 75,153 C54,151 36,142 24,127 C12,112 5,92 8,72 C11,52 23,32 40,20 C53,10 66,9 80,8 Z" fill="url(#sealGrad)"/>
+
+    <!-- Inner embossed ring -->
+    <circle cx="80" cy="80" r="54" stroke="url(#goldGrad)" stroke-width="2.5" fill="none" opacity="0.85"/>
+    <circle cx="80" cy="80" r="49" stroke="#503768" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+    <!-- Monogram T & R -->
+    <text x="80" y="88" font-family="'Cinzel', 'Playfair Display', 'Georgia', serif" font-size="34" font-weight="700" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="2" style="filter: drop-shadow(0px 2px 2px rgba(30,15,40,0.6));">T &amp; R</text>
+
+    <!-- Small heart above -->
+    <path d="M80,50 C78,46 72,46 70,50 C68,54 74,60 80,64 C86,60 92,54 90,50 C88,46 82,46 80,50 Z" fill="url(#goldGrad)"/>
+    <!-- Small star beneath -->
+    <circle cx="80" cy="106" r="3" fill="url(#goldGrad)"/>
+  </g>
+</svg>
