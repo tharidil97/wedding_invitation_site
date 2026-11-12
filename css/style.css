@@ -763,7 +763,7 @@ body {
 
 .section-main-title {
   font-family: 'Cinzel', serif;
-  font-size: clamp(1.8rem, 5.5vw, 3.7rem);
+  font-size: clamp(1.8rem, 4.5vw, 2.7rem);
   font-weight: 700;
   color: var(--text-dark);
   margin-bottom: 14px;
