@@ -567,7 +567,7 @@ body {
 .hero-editorial-title {
   font-family: 'Playfair Display', 'Cinzel', serif;
   font-weight: 400;
-  font-size: clamp(0.6rem, 1.5vw, 1rem);
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
   color: #ffffff;
   line-height: 1.15;
   margin-bottom: 20px;
